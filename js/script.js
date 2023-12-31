@@ -1,6 +1,8 @@
 /*
 Treehouse Techdegree:
 FSJS Project 2 - Data Pagination and Filtering
+
+Student: Doris Keller, Pfäffikon SZ, Switzerland
 */
 
 /**
@@ -107,7 +109,7 @@ const searchFunction = (list, label) => {
       addPagination(filteredList);
    } else {
       linkList.innerHTML = "";
-      studentList.innerHTML = `<h3>Sorry, we didn't found any results matching your search for ${userInput}</h3>`;
+      studentList.innerHTML = `<h3>Sorry, we didn't found any results matching "${userInput}"</h3>`;
    }
    return filteredList;
 }
@@ -127,7 +129,7 @@ const searchBar = list => {
       }
       return el;
    }
-   
+
    const header = document.querySelector(".header");
    const label = createEl("label", "for", "search", "class", "student-search");
    const span = document.createElement("span");
