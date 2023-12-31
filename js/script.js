@@ -119,21 +119,23 @@ const searchFunction = (list, label) => {
  */
 
 const searchBar = list => {
+   const createEl = (el, a1, val1, a2=null, val2=null) => {
+      el = document.createElement(el);
+      el.setAttribute(a1, val1);
+      if (a2 !== null) {
+         el.setAttribute(a2, val2);
+      }
+      return el;
+   }
+   
    const header = document.querySelector(".header");
-   const label = document.createElement("label");
-   label.setAttribute("for", "search");
-   label.setAttribute("class", "student-search");
+   const label = createEl("label", "for", "search", "class", "student-search");
    const span = document.createElement("span");
    span.textContent = "Search by name";
-   const input = document.createElement("input");
-   input.setAttribute("type", "text");
-   input.setAttribute("id", "search");
-   input.setAttribute("placeholder", "Search by name...");
-   const searchBtn = document.createElement("button");
-   searchBtn.setAttribute("type", "button");
-   const img = document.createElement("img");
-   img.setAttribute("src", "./img/icn-search.svg");
-   img.setAttribute("alt", "Serch icon");
+   const input = createEl("input", "id", "search", "placeholder", "Search by name...");
+   const searchBtn = createEl("button", "type", "button");
+   const img = createEl("img", "src", "./img/icn-search.svg", "alt", "Search icon");
+   
    searchBtn.append(img);
    label.append(span, input, searchBtn);
    header.append(label);
