@@ -37,7 +37,7 @@ const showPage = (list, page) => {
          const html = `
             <li class="student-item cf">
                <div class="student-details">
-                  <img class="avatar" src="${img}" alt="`Image showing a portrait of ${first} ${last}`">
+                  <img class="avatar" src="${img}">
                   <h3>${first} ${last}</h3>
                   <span class="email">${email}</span>
                </div>
